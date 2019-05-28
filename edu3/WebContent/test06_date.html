@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Date</title>
+<script>
+	var d;
+	function check() {
+		var p = document.getElementById('pdate').value
+
+		var now = new Date();
+		var pdate = new Date(p);
+
+		var days = Math.floor((now - pdate) / (1000 * 60 * 60 * 24))
+		d=days;
+		if (days > 30) {
+			alert('교환기간이 지났따리.');
+		} else {
+			alert('교환 가능합니다.');
+		}
+	}
+</script>
+</head>
+<body>
+	구입날짜 :<input type="date" id="pdate" required="required"><br>
+	 환불가능Check :<button onclick="check()"> check</button>
+</body>
+</html>

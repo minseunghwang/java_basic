@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Array</title>
+</head>
+<script>
+	var x =[3,6,9,4,77,88]
+	var y =[11,23,44,66]
+	var num = x.concat(y)
+	
+		//num.filter(i=>i>30)
+		document.write("<ul>")
+		
+	/* for(let data of num){
+		document.write("<li>"+data+"</li>")
+	} */
+		num.filter(i=>i>30).forEach(data=>document.write("<li>"+data+"</li>"))
+		document.write("</ul>")
+		// 필터톨려서 i 가 30보다 큰거만 중에 저런형태로 출력하기
+</script>
+<body>	
+</body>
+</html>

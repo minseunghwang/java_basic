@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Title</title>
+<script>
+	function add() {
+		var x =document.getElementById('x').value;
+		var y =document.getElementById('y').value;
+		console.log(parseInt(x)+parseInt(y))
+		document.getElementById('sum').value=parseInt(x)+parseInt(y);
+		
+		var flag = confirm('서버로 제출할까요 ?')
+		return flag;
+	}
+	consol.log()
+	document.getElementById('input1').value
+
+</script>
+</head>
+<body>	
+	<h2>Add</h2>
+	<form action="process.jsp" method="get">
+		<input type="text" id="x"> +
+		<input type="text" id="y"> =
+		<input type="text" id="sum">
+		<br>
+		<input type = "button" value="더하기 button" onclick="add()">
+		<input type = "submit" value="더하기 submit" onclick="return add()">
+		<input type = "submit">
+		<input type = "reset">
+	</form>
+</body>
+</html>

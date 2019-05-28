@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>json</title>
+<script>
+	var data1={name : "홍길동", "age" : 27}			// "" 로 감싸지않아서 파싱이 안된다 ?
+	
+	var data2={"name" : "홍길동", "age" : 27}		// 
+	
+	var data3=[
+		{"name" : "홍길동", "age":27},
+		{"name" : "김길동", "age":31},
+		{"name" : "고길동", "age":29},
+		{"name" : "최길동", "age":25}
+	]
+	/* var data4=
+	'[{"name" : "홍길동, "age":27}, {"name" : "김길동", "age":31}, {"name" : "고길동", "age":29},	{"name" : "최길동", "age":25}]' */
+	
+	var s1 = JSON.stringify(data1);		// 자바스크립트 객체를 문자로 만든다. 문자열 리턴
+	var s2 = JSON.stringify(data2);
+	var s3 = JSON.stringify(data3);
+	
+	var obj3 = JSON.parse(s3)			// {}이거기준으로 떼어주는듯. 객체 리턴
+	
+	const log = console.log;
+	function getData(){
+		var result = document.getElementById('result')
+		var tag='';
+		for(let data of obj3){
+			tag += '<h2>';
+			tag += data.name
+			tag += '</h2>';
+		}
+		result.innerHTML = tag;
+		
+	}
+</script>
+</head>
+<body>	
+	<button onclick="getData()">Data 가져오기</button><br>
+	<div id="result"></div>
+</body>
+</html>
+
+//data 가져오기 클릭하면 주소록 목록이 테이블 형태로 #result 창에 출력되게
+//getData() 함수 완성하기
+//조건
+//getData() 함수에 주소록 데이터가 자바스트객체의 배열형태로 있다고 가정

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>json</title>
+
+<style>
+table tr{
+	text-align: center;
+}
+table tr th{
+	width:8em;
+	background-color: gray;
+}
+
+table tr th:hover{
+	color:red;
+}
+table tr td:hover{
+	color:red;
+	text-shadow:5px 5px 5px white;	
+}
+</style>
+<script>
+
+	var data3=[
+		{"name" : "홍길동", "age":27},
+		{"name" : "김길동", "age":31},
+		{"name" : "고길동", "age":29},
+		{"name" : "최길동", "age":25},
+		{"name" : "황민승", "age":26}
+	]
+	
+	var s3 = JSON.stringify(data3); // 자바스크립트 객체를 문자로 만든다. 문자열 리턴
+	var obj3 = JSON.parse(s3)			// {}이거기준으로 떼어주는듯. 객체 리턴
+	
+	const log = console.log;
+	function getData(){
+		var result = document.getElementById('result')
+		var tag='';
+		tag += 	'<table class="a" border="1">'
+		tag += '<tr><th>이름</th><th>나이</th></tr>';
+		for(let data of obj3){
+			tag += '<tr><td>';
+			tag += data.name
+			tag += '</td>'
+			
+			tag += '<td>';
+			tag += data.age
+			tag += '</td></tr>'
+		}
+		tag += '</table>';
+	
+		result.innerHTML = tag;
+	}
+</script>
+</head>
+<body>	
+	<button onclick="getData()">Data 가져오기</button><br>
+	<div id="result"></div>
+</body>
+</html>
+
+<!-- //data 가져오기 클릭하면 주소록 목록이 테이블 형태로 #result 창에 출력되게
+//getData() 함수 완성하기
+//조건
+//getData() 함수에 주소록 데이터가 자바스트객체의 배열형태로 있다고 가정 -->

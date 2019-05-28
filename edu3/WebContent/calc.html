@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>calc</title>
+<style type="text/css">
+table {
+  border: 2px solid red;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+table , tr ,td{
+  border: 1px solid black;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+input.btn{
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    font-size: 15pt;
+}
+.clr, .equal{
+    width: 112px;
+    height: 40px;
+    margin: 5px;
+    font-size: 15pt;
+}
+#display{
+    width: 295px;
+    height: 40px;
+    margin: 5px;
+    border:2px solid green;
+    font-size: 22pt;
+    text-align: right;
+}
+</style>
+
+
+ 
+</head>
+<body>
+ <h2 align="center">계 산 기</h2>
+    <form name="calform">
+<!--         <table border="0" align="center" cellspacing="0" style="border:2px solid blue;  "> -->
+        <table>
+            <tr>
+                <td colspan="5">
+                <input type="text" name="display" id="display" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" class="btn" onclick="add(7)" ></td>
+                <td><input type="button" value="8" class="btn" onclick="add(8)"></td>
+                <td><input type="button" value="9" class="btn" onclick="add(9)"></td>
+                <td colspan="2">
+                    <input type="button" value="C" class="clr" >
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" class="btn" onclick="add(4)"></td>
+                <td><input type="button" value="5" class="btn" onclick="add(5)"></td>
+                <td><input type="button" value="6" class="btn" onclick="add(6)"></td>
+                <td><input type="button" value="/" class="btn" onclick="add('/')"></td>
+                <td><input type="button" value="%" class="btn" onclick="add('%')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" class="btn" onclick="add(1)"></td>
+                <td><input type="button" value="2" class="btn" onclick="add(2)"></td>
+                <td><input type="button" value="3" class="btn" onclick="add(3)"></td>
+                <td><input type="button" value="*" class="btn" onclick="add('*')"></td>
+                <td><input type="button" value="+" class="btn" onclick="add('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" class="btn" ></td>
+                <td><input type="button" value="." class="btn" ></td>
+                <td colspan="2">
+                <input type="button" value="=" class="equal" >
+                </td>
+                <td><input type="button" value="-" class="btn" ></td>
+            </tr>
+        </table>
+    </form>
+  
+  <script type="text/javascript">
+
+var disp =  document.getElementById('display');
+var expression='';
+	
+function add(data) {
+	expression += data
+	disp.value=expression;
+}
+function compute(){
+	disp.value = eval(expression)
+}
+
+function c() {
+	expression='';
+	disp.value = expression;
+}
+
+
+</script>
+</body>
+</html>
